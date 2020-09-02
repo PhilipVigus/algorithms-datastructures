@@ -12,4 +12,8 @@ describe("binarySearch", () => {
   it("returns null if the element isn't in the list", () => {
     expect(binarySearch([1], 2)).toEqual(null);
   });
+
+  it("returns the element in a longer list", () => {
+    expect(binarySearch([0, 1, 2, 3, 4, 5], 1)).toEqual(1);
+  });
 });

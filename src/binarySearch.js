@@ -1,5 +1,5 @@
 const binarySearch = (list, searchValue) => {
-  return 1;
+  return searchValue;
 };
 
 export default binarySearch;

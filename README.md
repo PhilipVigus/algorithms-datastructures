@@ -86,3 +86,24 @@ Big O common categories
 | :-------- | :----- | :---- |
 | Reading   | O(1)   | O(n)  |
 | Insertion | O(n)   | O(1)  |
+
+## Selection Sort
+
+- Take a list
+- Go through the list an element at a time and find the lowest
+- Move the lowest to the front
+- Go through the list and find the next lowest
+- Move it next to the lowest
+- Repeat until the list is ordered
+
+### Big O explanation
+
+- 1st iteration - check n items
+- 2nd iteration - check n - 1
+- 3rd iteration - check n - 2
+- etc
+
+On average, you check a list that has 0.5 x n elements, so the complexity is:
+O(n x 0.5 x n). However, constants are ignored in big O notation, so for selection sort, complexity:
+
+- O(n2)

@@ -2,10 +2,10 @@
 
 ## Logarithms
 
-10**2 = 100 so log(10) 100 = 2
-10**3 = 1000 so log(10) 1000 = 3
-2**3 = 8 so log(2) 8 = 3
-2**4 = 16 so log(2) 16 = 4
+- 10\*\*2 = 100 so log(10) 100 = 2
+- 10\*\*3 = 1000 so log(10) 1000 = 3
+- 2\*\*3 = 8 so log(2) 8 = 3
+- 2\*\*4 = 16 so log(2) 16 = 4
 
 With algorithmic complexity, log always means log(2)
 

@@ -51,10 +51,38 @@ Big O notation does this. It tells you have fast the algorithm grows in a worst 
 
 Big O common categories
 
-| Big O        | Name        | Example algorithm                                   |
-| :----------- | :---------- | :-------------------------------------------------- |
-| O(log n)     | log time    | Binary search                                       |
-| O(n)         | linear time | Simple search                                       |
-| O(n + log n) | -           | Fast sorting algorithms like quicksort              |
-| O(n2)        | -           | Slow sorting algorithms like selection sort         |
-| O(n!)        | -           | Really slow algorithms like the travelling salesman |
+| Big O        | Name          | Example algorithm                                   |
+| :----------- | :------------ | :-------------------------------------------------- |
+| O(1)         | constant time | Array access, linked list insertion                 |
+| O(log n)     | log time      | Binary search                                       |
+| O(n)         | linear time   | Simple search                                       |
+| O(n + log n) | -             | Fast sorting algorithms like quicksort              |
+| O(n2)        | -             | Slow sorting algorithms like selection sort         |
+| O(n!)        | -             | Really slow algorithms like the travelling salesman |
+
+## Arrays and linked lists
+
+### Arrays
+
+- All elements stored contiguously in memory
+- This can cause problems if the array grows and needs more space than is currently available where it 'sits' in memory, as the whole array then needs to be moved. This is really slow
+- Workarounds
+  - reserve space in advance
+    - can waste space if that space isn't actually needed
+    - might need more than the reserved space, leading back to the original problem
+- Great for random access
+- Terrible for insertion
+  - Worst case is having to insert at index 0, which requires each element to be shifted up one in position
+
+### Linked lists
+
+- Items can be anywhere in memory
+- Each item stores the address of the next item
+- Makes adding or inserting items easy, and you never have to move them in the same way you do with arrays
+- Random access is impossible, you have to traverse the entire list to get to the element you want
+  - However, access can generally be made quicker using pointers to the first and last elements in the list (usually called head and tail)
+
+|           | Arrays | Lists |
+| :-------- | :----- | :---- |
+| Reading   | O(1)   | O(n)  |
+| Insertion | O(n)   | O(1)  |

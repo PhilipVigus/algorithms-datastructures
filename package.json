@@ -43,6 +43,9 @@
     ]
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "modulePathIgnorePatterns": [
+      "./dist-server"
+    ]
   }
 }

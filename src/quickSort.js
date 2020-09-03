@@ -1,5 +1,5 @@
 const quickSort = (list) => {
-  return [];
+  return list;
 };
 
 export default quickSort;

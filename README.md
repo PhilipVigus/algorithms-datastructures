@@ -120,3 +120,19 @@ O(n x 0.5 x n). However, constants are ignored in big O notation, so for selecti
 - functions are popped off of the stack when they finish running
 - The stack is heavily used by recursive functions, with each individual call to the function being saved onto the stack until the functions 'unwind'. This means it's possible for recursive functions to take up a lot of memory if there are a lot of levels of recursion or each function call stores a lot of info on the stack
 - A way around this is using tail recursion
+
+## Divide and conquer
+
+- D&C algorithms are recursive. They require two steps
+  - figure out thhe base case, which should be the simplest possible case
+  - divide or decrease the problem until it becomes the base case
+
+### Example - dividing a rectangle into the largest possible squares of equal sizes
+
+- Base case
+  - one side being a multiple of the other
+- Recursive case
+  - find the biggest square that will work for the rectangle you have
+  - then call the function again with the remaining rectangle
+  - keep going until the rectangle you are left with meets the conditions for the base case
+  - the size of the boxes given in the base case gives you your answer

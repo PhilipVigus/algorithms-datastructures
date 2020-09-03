@@ -107,3 +107,16 @@ On average, you check a list that has 0.5 x n elements, so the complexity is:
 O(n x 0.5 x n). However, constants are ignored in big O notation, so for selection sort, complexity:
 
 - O(n2)
+
+## Recursion
+
+- There are no specific performance benefits to using recursion over loops. Sometimes they are worse
+- Generally recursion is used because it makes code clearer
+- A recursive function has a base case and a recursive case. The base case tells the function when to stop, and the recursive case tells the function how to call itself
+
+### The stack
+
+- The call stack is used whenever a function is called, and stores the name of the function and any arguments used to call the function
+- functions are popped off of the stack when they finish running
+- The stack is heavily used by recursive functions, with each individual call to the function being saved onto the stack until the functions 'unwind'. This means it's possible for recursive functions to take up a lot of memory if there are a lot of levels of recursion or each function call stores a lot of info on the stack
+- A way around this is using tail recursion

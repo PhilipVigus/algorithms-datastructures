@@ -2,13 +2,18 @@ const quickSort = (list) => {
   if (list.length < 2) {
     return list;
   } else {
-    const pivot = list[0];
+    const pivotPoint = Math.floor(list.length / 2);
+    const pivot = list[pivotPoint];
+    const arrayToPartition = [
+      ...list.slice(0, pivotPoint),
+      ...list.slice(pivotPoint + 1),
+    ];
 
-    const elementsLower = list.slice(1).filter((element) => {
+    const elementsLower = arrayToPartition.filter((element) => {
       return element <= pivot;
     });
 
-    const elementsHigher = list.slice(1).filter((element) => {
+    const elementsHigher = arrayToPartition.filter((element) => {
       return element > pivot;
     });
 

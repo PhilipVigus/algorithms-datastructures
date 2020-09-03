@@ -51,14 +51,14 @@ Big O notation does this. It tells you have fast the algorithm grows in a worst 
 
 Big O common categories
 
-| Big O        | Name          | Example algorithm                                   |
-| :----------- | :------------ | :-------------------------------------------------- |
-| O(1)         | constant time | Array access, linked list insertion                 |
-| O(log n)     | log time      | Binary search                                       |
-| O(n)         | linear time   | Simple search                                       |
-| O(n + log n) | -             | Fast sorting algorithms like quicksort              |
-| O(n2)        | -             | Slow sorting algorithms like selection sort         |
-| O(n!)        | -             | Really slow algorithms like the travelling salesman |
+| Big O      | Name          | Example algorithm                                   |
+| :--------- | :------------ | :-------------------------------------------------- |
+| O(1)       | constant time | Array access, linked list insertion                 |
+| O(log n)   | log time      | Binary search                                       |
+| O(n)       | linear time   | Simple search                                       |
+| O(n log n) | -             | Fast sorting algorithms like quicksort              |
+| O(n2)      | -             | Slow sorting algorithms like selection sort         |
+| O(n!)      | -             | Really slow algorithms like the travelling salesman |
 
 ## Arrays and linked lists
 
@@ -143,6 +143,21 @@ O(n x 0.5 x n). However, constants are ignored in big O notation, so for selecti
 - base case
   - empty array or arrays with one element, don't need to be sorted
 - recursive case
+
   - choose a pivot element
   - find elements smaller than the pivot and elements larger and put into subarrays
   - call quicksort on the subarrays
+
+- Quicksort's speed depends on the pivot you choose
+  - worse case = O(n2)
+    - choosing the first element as the pivot for already sorted array
+    - the call stack in this case ends up as being n in size, and each call touches an average of n/2 elements
+  - average case = O(n log n)
+    - choosing the middle element as the pivot
+    - the call stack size is log n
+    - you still 'touch' all n elements on each call
+- Possible choices of pivot
+  - first element
+    - worst case for already sorted lists
+  - middle or random element
+    - completes in O(n log n) time on average

@@ -150,8 +150,11 @@ O(n x 0.5 x n). However, constants are ignored in big O notation, so for selecti
 
 - Quicksort's speed depends on the pivot you choose
   - worse case = O(n2)
-    - choosing the first element as the pivot for already sorted array
+    - choosing the first or last element as the pivot for already sorted array
+    - this means that one of the partitions is always empty
     - the call stack in this case ends up as being n in size, and each call touches an average of n/2 elements
+  - best case = O(n log n)
+    - when the two partitions are as near in size as possible
   - average case = O(n log n)
     - choosing the middle element as the pivot
     - the call stack size is log n
@@ -161,3 +164,9 @@ O(n x 0.5 x n). However, constants are ignored in big O notation, so for selecti
     - worst case for already sorted lists
   - middle or random element
     - completes in O(n log n) time on average
+
+### Mergesort
+
+- Mergesort also runs with O(n log n)
+- However, its constant, which is usually ignored with big O notation, is larger than quicksort's. This means that although they are in the same category, quicksort actually runs faster
+- Quicksort also hits the average case far more often than the worst case

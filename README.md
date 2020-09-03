@@ -136,3 +136,13 @@ O(n x 0.5 x n). However, constants are ignored in big O notation, so for selecti
   - then call the function again with the remaining rectangle
   - keep going until the rectangle you are left with meets the conditions for the base case
   - the size of the boxes given in the base case gives you your answer
+
+## Quicksort
+
+- Uses divide and conquer
+- base case
+  - empty array or arrays with one element, don't need to be sorted
+- recursive case
+  - choose a pivot element
+  - find elements smaller than the pivot and elements larger and put into subarrays
+  - call quicksort on the subarrays

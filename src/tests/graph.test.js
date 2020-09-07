@@ -43,5 +43,11 @@ describe("Graph", () => {
         "thirdNode",
       ]);
     });
+
+    it("returns an empty array if no neighbours exist", () => {
+      const graph = new Graph();
+      graph.addEdge("firstNode", "secondNode");
+      expect(graph.getNeighbours("secondNode")).toEqual([]);
+    });
   });
 });

@@ -16,7 +16,11 @@ class Graph {
   };
 
   getNeighbours = (node) => {
-    return this.edges.get(node);
+    if (this.edges.has(node)) {
+      return this.edges.get(node);
+    } else {
+      return [];
+    }
   };
 
   toString = () => {

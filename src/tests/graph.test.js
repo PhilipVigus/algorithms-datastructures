@@ -14,5 +14,14 @@ describe("Graph", () => {
       graph.addEdge("firstNode", "secondNode");
       expect(graph.toString()).toEqual("firstNode -> secondNode");
     });
+
+    it("allows you to add a second node to an existing node", () => {
+      const graph = new Graph();
+      graph.addEdge("firstNode", "secondNode");
+      graph.addEdge("firstNode", "thirdNode");
+      expect(graph.toString()).toEqual(
+        "firstNode -> secondNode\nfirstNode -> thirdNode"
+      );
+    });
   });
 });

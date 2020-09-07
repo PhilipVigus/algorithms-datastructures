@@ -4,15 +4,24 @@ class Graph {
   }
 
   addEdge = (sourceNode, destinationNode) => {
-    this.edges.set(sourceNode, destinationNode);
+    if (this.edges.has(sourceNode)) {
+      this.edges.get(sourceNode).push(destinationNode);
+    } else {
+      this.edges.set(sourceNode, [destinationNode]);
+    }
   };
 
   toString = () => {
     let str = "";
-    this.edges.forEach((destinationNode, soureNode) => {
-      str += `${soureNode} -> ${destinationNode}`;
+    const edgeStrings = [];
+
+    this.edges.forEach((destinationNodeList, soureNode) => {
+      destinationNodeList.forEach((destinationNode) => {
+        edgeStrings.push(`${soureNode} -> ${destinationNode}`);
+      });
     });
-    return str;
+
+    return str + edgeStrings.join("\n");
   };
 }
 

@@ -15,4 +15,15 @@ describe("breadthFirstSearch", () => {
 
     expect(breadthFirstSearch(graph, "firstNode", "thirdNode")).toEqual(false);
   });
+
+  it("returns true if the node is found in a more complex graph", () => {
+    const graph = new Graph();
+    graph.addEdge("firstNode", "secondNode");
+    graph.addEdge("firstNode", "thirdNode");
+    graph.addEdge("firstNode", "fourthNode");
+    graph.addEdge("fourthNode", "fifthNode");
+    graph.addEdge("fifthNode", "sixthNode");
+
+    expect(breadthFirstSearch(graph, "firstNode", "fifthNode")).toEqual(true);
+  });
 });

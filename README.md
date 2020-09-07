@@ -224,3 +224,20 @@ O(n x 0.5 x n). However, constants are ignored in big O notation, so for selecti
 - Can work out
   - Is there a path from A to B?
   - What is the shorted path from A to B?
+- Run time is O(V+E) where V = vertices = nodse
+  - if you search the entire graph, you follow each edge
+  - you keep a queue of everyone searched. Adding a person to the queue is O(1), and doing this for every person gives O(V)
+  - therefore the total time is O(V+E)
+
+### Topological sort
+
+- Takes a directed graph and returns an array of nodes where each node appears before each of the nodes it points to
+
+### Tree
+
+- A type of graph
+  - only one path between any two vertices
+  - exactly one root node
+  - every child has exactly one parent node
+  - there are no loops or self-loops
+  - has an inherent hierarchical structure

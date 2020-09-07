@@ -217,6 +217,7 @@ O(n x 0.5 x n). However, constants are ignored in big O notation, so for selecti
 - Directly connected nodes are called neighbours
 - Good for calculating the shortest path to something
   - breadth-first search
+- Directed graphs have edges that are one-way only, while undirected graphs' edges do not specify a direction
 
 ### Breadth-first search
 

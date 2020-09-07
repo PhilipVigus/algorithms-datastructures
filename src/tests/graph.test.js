@@ -23,5 +23,13 @@ describe("Graph", () => {
         "firstNode -> secondNode\nfirstNode -> thirdNode"
       );
     });
+
+    it("prevents you to adding duplicate edges", () => {
+      const graph = new Graph();
+      graph.addEdge("firstNode", "secondNode");
+      expect(() => {
+        graph.addEdge("firstNode", "secondNode");
+      }).toThrow(new Error("Duplicate edge in graph"));
+    });
   });
 });

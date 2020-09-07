@@ -5,7 +5,11 @@ class Graph {
 
   addEdge = (sourceNode, destinationNode) => {
     if (this.edges.has(sourceNode)) {
-      this.edges.get(sourceNode).push(destinationNode);
+      if (this.edges.get(sourceNode).includes(destinationNode)) {
+        throw new Error("Duplicate edge in graph");
+      } else {
+        this.edges.get(sourceNode).push(destinationNode);
+      }
     } else {
       this.edges.set(sourceNode, [destinationNode]);
     }

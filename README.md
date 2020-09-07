@@ -203,9 +203,23 @@ O(n x 0.5 x n). However, constants are ignored in big O notation, so for selecti
 - One way to handle is by having slots with lists rather than individual values
 - Avoiding collisions ensures hash tables get average rather than worst case performance
 
-#### Load factor
+### Load factor
 
 - No of items in table / total number of slots
 - Low is good
 - When load factors get high, you have to resize the table, which takes a lot of time
 - Typically, make it twice the size when you hit 70% capacity
+
+## Graphs
+
+- Models a set of connections
+- Made up of nodes and edges
+- Directly connected nodes are called neighbours
+- Good for calculating the shortest path to something
+  - breadth-first search
+
+### Breadth-first search
+
+- Can work out
+  - Is there a path from A to B?
+  - What is the shorted path from A to B?

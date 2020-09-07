@@ -7,4 +7,12 @@ describe("Graph", () => {
       expect(graph.toString()).toEqual("");
     });
   });
+
+  describe("addEdge", () => {
+    it("allows you to add a node", () => {
+      const graph = new Graph();
+      graph.addEdge("firstNode", "secondNode");
+      expect(graph.toString()).toEqual("firstNode -> secondNode");
+    });
+  });
 });

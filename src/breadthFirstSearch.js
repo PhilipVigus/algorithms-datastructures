@@ -1,13 +1,16 @@
 const breadthFirstSearch = (graph, startNode, searchNode) => {
   const searchQueue = graph.getNeighbours(startNode);
-  console.log(searchQueue);
+  const nodesSearched = [];
 
   while (searchQueue.length > 0) {
     const node = searchQueue.shift();
-    if (node === searchNode) {
-      return true;
-    } else {
-      searchQueue.push(...graph.getNeighbours(node));
+    if (!nodesSearched.includes(node)) {
+      if (node === searchNode) {
+        return true;
+      } else {
+        searchQueue.push(...graph.getNeighbours(node));
+        nodesSearched.push(node);
+      }
     }
   }
   return false;

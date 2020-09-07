@@ -6,6 +6,13 @@ describe("breadthFirstSearch", () => {
     const graph = new Graph();
     graph.addEdge("firstNode", "secondNode");
 
-    expect(breadthFirstSearch(graph, "firstNode")).toEqual(true);
+    expect(breadthFirstSearch(graph, "firstNode", "secondNode")).toEqual(true);
+  });
+
+  it("returns false if the node is not found", () => {
+    const graph = new Graph();
+    graph.addEdge("firstNode", "secondNode");
+
+    expect(breadthFirstSearch(graph, "firstNode", "thirdNode")).toEqual(false);
   });
 });

@@ -53,7 +53,7 @@ Big O common categories
 
 | Big O      | Name          | Example algorithm                                   |
 | :--------- | :------------ | :-------------------------------------------------- |
-| O(1)       | constant time | Array access, linked list insertion                 |
+| O(1)       | constant time | Array access, linked list, hash table insertion     |
 | O(log n)   | log time      | Binary search                                       |
 | O(n)       | linear time   | Simple search                                       |
 | O(n log n) | -             | Fast sorting algorithms like quicksort              |
@@ -170,3 +170,42 @@ O(n x 0.5 x n). However, constants are ignored in big O notation, so for selecti
 - Mergesort also runs with O(n log n)
 - However, its constant, which is usually ignored with big O notation, is larger than quicksort's. This means that although they are in the same category, quicksort actually runs faster
 - Quicksort also hits the average case far more often than the worst case
+
+## Hash tables
+
+- Allow finding elements in a table with O(1) time complexity (on average), O(n) worst cast
+- Hash function
+  - Take a string as input and give a number as ouput
+  - Maps strings to numbers
+  - Must be consistent, giving the same output for the same input each time
+  - Should map different strings to different numbers
+  - Good hash functions are extremely important
+    - distribute values evenly
+    - example is the SHA function
+- Hash functions are used in conjunction with an array, with the function mapping a key to an array index where the value is stored
+- Functions also only return valid indices, eg not returning something outside of the bounds of the array
+- Hash tables are also known as
+  - dictionaries
+  - associative arrays
+  - hash maps
+  - maps
+  - dictionaries
+- Most languages already have at least one hash table implementation
+- Use cases
+  - lookups (phone directory)
+  - prevention of duplicate entries
+  - caches
+
+### Collisions
+
+- When a hash function maps a string to a number with an existing value
+- Won't happen often
+- One way to handle is by having slots with lists rather than individual values
+- Avoiding collisions ensures hash tables get average rather than worst case performance
+
+#### Load factor
+
+- No of items in table / total number of slots
+- Low is good
+- When load factors get high, you have to resize the table, which takes a lot of time
+- Typically, make it twice the size when you hit 70% capacity

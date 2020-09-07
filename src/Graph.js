@@ -15,6 +15,10 @@ class Graph {
     }
   };
 
+  getNeighbours = (node) => {
+    return this.edges.get(node);
+  };
+
   toString = () => {
     let str = "";
     const edgeStrings = [];

@@ -32,4 +32,16 @@ describe("Graph", () => {
       }).toThrow(new Error("Duplicate edge in graph"));
     });
   });
+
+  describe("getNeighbours", () => {
+    it("returns all of the neighbour nodes for a given node", () => {
+      const graph = new Graph();
+      graph.addEdge("firstNode", "secondNode");
+      graph.addEdge("firstNode", "thirdNode");
+      expect(graph.getNeighbours("firstNode")).toEqual([
+        "secondNode",
+        "thirdNode",
+      ]);
+    });
+  });
 });
